@@ -10,6 +10,7 @@ echo "******************************************"
 echo "*** Installing common network packages ***"
 echo "******************************************"
 sudo apt-get install -y --no-install-recommends --fix-missing \
+  bridge-utils \
   curl \
   git \
   iperf \
