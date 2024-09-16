@@ -17,6 +17,7 @@ sudo apt-get install -y --no-install-recommends --fix-missing \
   iproute2 \
   net-tools \
   openvswitch-switch \
+  patch \
   python3 \
   python3-pip \
   python3-virtualenv \
