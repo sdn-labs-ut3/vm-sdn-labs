@@ -37,6 +37,7 @@ sudo pip3 install scapy ipaddr psutil grpcio
 echo "**************************"
 echo "*** Installing Mininet ***"
 echo "**************************"
+cd ~
 git clone https://github.com/mininet/mininet.git
 cd mininet
 # Install Mininet itself (-n), the OpenFlow reference controller (-f),
