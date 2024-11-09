@@ -75,6 +75,12 @@ sudo apt-get install -q -y --no-install-recommends --fix-missing \
   p4lang-bmv2 \
   p4lang-pi
 
+echo "*****************************************"
+echo "*** Installing P4-Mininet environment ***"
+echo "*****************************************"
+cd ~
+git clone https://github.com/sdn-labs-ut3/p4-mininet.git
+
 # ---- End ----
 cd ~
 echo "**** DONE PROVISIONING VM ****"
