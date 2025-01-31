@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 
 echo "Provisioning guest VM..."
+echo "*** This script must be used exclusively for Ubuntu 22.04 ***"
 
 sudo apt-get update
 sudo apt-get -y upgrade
@@ -50,7 +51,13 @@ echo "**********************"
 echo "*** Installing RYU ***"
 echo "**********************"
 cd ~
-virtualenv -p /usr/bin/python3 ryuenv
+
+# Python 3.9 needed for ryu
+sudo add-apt-repository ppa:deadsnakes/ppa
+sudo apt install python3.9
+sudo apt install python3.9-distutils
+
+virtualenv -p /usr/bin/python3.9 ryuenv
 source ~/ryuenv/bin/activate
 pip install ryu
 # Downgrade eventlet lib (otherwise bug with Ryu...)
@@ -65,8 +72,8 @@ cd ~
 # Add repository with P4 packages
 # https://build.opensuse.org/project/show/home:p4lang
 
-echo "deb http://download.opensuse.org/repositories/home:/p4lang/xUbuntu_20.04/ /" | sudo tee /etc/apt/sources.list.d/home:p4lang.list
-wget -qO - "http://download.opensuse.org/repositories/home:/p4lang/xUbuntu_20.04/Release.key" | sudo apt-key add -
+echo "deb https://download.opensuse.org/repositories/home:/p4lang/xUbuntu_22.04/ /" | sudo tee /etc/apt/sources.list.d/home:p4lang.list
+wget -qO - "http://download.opensuse.org/repositories/home:/p4lang/xUbuntu_22.04/Release.key" | sudo apt-key add -
 
 sudo apt-get update
 
