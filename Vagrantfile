@@ -14,7 +14,7 @@ Vagrant.configure("2") do |config|
   # boxes at https://vagrantcloud.com/search.
   config.vm.box = "bento/ubuntu-22.04"
   config.vm.network "forwarded_port", guest: 22, host: 2244, id: "ssh"
-  # config.vm.provision "shell", privileged: false, path: "bootstrap.sh"
+  config.vm.provision "shell", privileged: false, path: "bootstrap.sh"
   # Forward X11 in SSH for xterm
   # config.ssh.forward_agent = true
   # config.ssh.forward_x11 = true
