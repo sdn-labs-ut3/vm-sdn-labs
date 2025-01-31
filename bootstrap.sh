@@ -50,7 +50,13 @@ echo "**********************"
 echo "*** Installing RYU ***"
 echo "**********************"
 cd ~
-virtualenv -p /usr/bin/python3 ryuenv
+
+# Python 3.9 needed for ryu
+sudo add-apt-repository ppa:deadsnakes/ppa
+sudo apt install python3.9
+sudo apt install python3.9-distutils
+
+virtualenv -p /usr/bin/python3.9 ryuenv
 source ~/ryuenv/bin/activate
 pip install ryu
 # Downgrade eventlet lib (otherwise bug with Ryu...)
