@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 
 echo "Provisioning guest VM..."
+echo "*** This script must be used exclusively for Ubuntu 22.04 ***"
 
 sudo apt-get update
 sudo apt-get -y upgrade
